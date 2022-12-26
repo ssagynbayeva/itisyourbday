@@ -41,4 +41,4 @@
 28/06        Ainur             Kuandykova
 02/08        Saken             Zhumabekov
 03/11        Valya             Vinokurova
-26/12        Test              Test
+27/12        Test              Test
