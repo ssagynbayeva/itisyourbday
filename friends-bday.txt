@@ -37,3 +37,8 @@
 23/12        Darkhan           Aimaganov
 24/12        Alen              Askar
 29/12        Ara               Nurtazin
+07/10        Rassul            Bekenov
+28/06        Ainur             Kuandykova
+02/08        Saken             Zhumabekov
+03/11        Valya             Vinokurova
+26/12        Test              Test

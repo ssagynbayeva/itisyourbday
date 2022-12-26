@@ -4,15 +4,26 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton  # for reply keybo
 from time import sleep
 from datetime import date
 import numpy as np
+from telegram.ext import Updater, CommandHandler, CallbackContext
+import logging
+import datetime
+
+import schedule
+import time
 
 today = date.today()
 d = today.strftime("%d/%m")
 
+updater = Updater(token='5747825338:AAErPHwrsyW26ffF31MHSORVW6Pmb9thk7k', use_context=True)
+dispatcher = updater.dispatcher
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
 bot = Bot(token='5747825338:AAErPHwrsyW26ffF31MHSORVW6Pmb9thk7k')
 dp = Dispatcher(bot)
 
-@dp.message_handler(commands=['today'])
+j = updater.job_queue
+
+@dp.message_handler()
 async def bday(message: types.Message):
     fname = 'friends-bday.txt'
     name = np.loadtxt(fname,unpack=True, comments='#',dtype='U')
@@ -23,5 +34,5 @@ async def bday(message: types.Message):
      if d == date:
             await bot.send_message(message.chat.id,'it is your birthday, {}'.format(firstname[i]))
 
-# this is the last line
+
 executor.start_polling(dp)
