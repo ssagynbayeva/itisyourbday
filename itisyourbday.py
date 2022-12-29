@@ -64,12 +64,11 @@ def report():
     for i, date in enumerate(dates):
         if d == date:
             bday_message = 'it is your birthday, {}'.format(firstname[i])
-
-    telegram_bot_sendtext(bday_message)
+            telegram_bot_sendtext(bday_message)
 
 
     
-schedule.every().day.at("00:00").do(report)
+schedule.every().day.at("00:05").do(report)
 # schedule.every(10).seconds.do(report)
 
 while True:
